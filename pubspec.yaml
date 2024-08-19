@@ -1,6 +1,6 @@
 name: tfk_toast
 description: "tfk_toast is a lightweight Flutter package for displaying customizable toast messages. It supports various toast types like info, warning, error, and success, seamlessly integrating with Flutter's Overlay widget to ensure toasts appear correctly above other UI elements."
-version: 0.0.15
+version: 0.0.16
 homepage: https://github.com/tfkcodes/tfk_toast
 
 environment:

@@ -2,11 +2,31 @@ import 'package:flutter/material.dart';
 
 enum ToastType { info, warning, error, success }
 
+enum ToastPosition { top, center, bottom }
+
 class TfkToast {
-  static showToast(BuildContext context, String message, ToastType type) {
+  static showToast(
+    BuildContext context,
+    String message,
+    ToastType type, {
+    ToastPosition position = ToastPosition.top,
+  }) {
+    double topPosition;
+    switch (position) {
+      case ToastPosition.top:
+        topPosition = 50.0;
+        break;
+      case ToastPosition.center:
+        topPosition = MediaQuery.of(context).size.height / 2 - 50.0;
+        break;
+      case ToastPosition.bottom:
+        topPosition = MediaQuery.of(context).size.height - 150.0;
+        break;
+    }
+
     OverlayEntry overlayEntry = OverlayEntry(
       builder: (context) => Positioned(
-        top: 50.0,
+        top: topPosition,
         left: MediaQuery.of(context).size.width * 0.1,
         right: MediaQuery.of(context).size.width * 0.1,
         child: Material(
@@ -28,9 +48,11 @@ class _CustomToastWidget extends StatelessWidget {
   final String message;
   final ToastType type;
 
-  const _CustomToastWidget(
-      {Key? key, required this.message, required this.type})
-      : super(key: key);
+  const _CustomToastWidget({
+    Key? key,
+    required this.message,
+    required this.type,
+  }) : super(key: key);
 
   Color _getBackgroundColor() {
     switch (type) {

@@ -1,10 +1,14 @@
 
 # TfkToast
 
-**TfkToast** is a Flutter package designed to display beautiful and customizable toast notifications. Toast messages provide non-intrusive feedback to users, enhancing their experience.
+[![pub package](https://img.shields.io/pub/v/tfk_toast.svg)](https://pub.dev/packages/seamless_data_sync)
 [![GitHub issues](https://img.shields.io/github/issues/tfkcodes/tfk_toast)](https://github.com/tfkcodes/tfk_toast/issues)
 [![GitHub stars](https://img.shields.io/github/stars/tfkcodes/tfk_toast)](https://github.com/tfkcodes/tfk_toast/stargazers)
 [![GitHub license](https://img.shields.io/github/license/tfkcodes/tfk_toast)](https://github.com/tfkcodes/tfk_toast/blob/main/LICENSE)
+
+
+**TfkToast** is a Flutter package designed to display beautiful and customizable toast notifications. Toast messages provide non-intrusive feedback to users, enhancing their experience.
+
 
 ## Features
 

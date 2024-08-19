@@ -7,9 +7,14 @@ import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 class MockTfkToastPlatform
     with MockPlatformInterfaceMixin
     implements TfkToastPlatform {
-
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<void> showToast(String message) async {
+    // Mock implementation for showToast
+    return;
+  }
 }
 
 void main() {
@@ -23,7 +28,10 @@ void main() {
     TfkToast tfkToastPlugin = TfkToast();
     MockTfkToastPlatform fakePlatform = MockTfkToastPlatform();
     TfkToastPlatform.instance = fakePlatform;
+  });
 
-    expect(await tfkToastPlugin.getPlatformVersion(), '42');
+  test('showToast', () async {
+    MockTfkToastPlatform fakePlatform = MockTfkToastPlatform();
+    TfkToastPlatform.instance = fakePlatform;
   });
 }

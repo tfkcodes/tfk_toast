@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 enum ToastType { info, warning, error, success }
 
 class ToastUtils {
-  static void showToast(BuildContext context, String message, ToastType type,
+  showToast(BuildContext context, String message, ToastType type,
       {String? title}) {
     final GlobalKey<_CustomToastWidgetState> key =
         GlobalKey<_CustomToastWidgetState>();

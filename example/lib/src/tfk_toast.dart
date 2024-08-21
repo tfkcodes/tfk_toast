@@ -1,12 +1,87 @@
 import 'package:flutter/material.dart';
 
-enum ToastType { info, warning, error, success }
+/// Represents the different types of toast notifications.
+///
+/// Each type typically corresponds to a specific color or style.
+enum ToastType {
+  /// An informational toast, typically with a blue background.
+  info,
 
-enum ToastPosition { top, center, bottom }
+  /// A warning toast, typically with an orange background.
+  warning,
 
-enum ToastAnimation { none, slide, fade, scale, bounce, rotate, zoom, wobble }
+  /// An error toast, typically with a red background.
+  error,
 
+  /// A success toast, typically with a green background.
+  success
+}
+
+/// Defines the position on the screen where the toast will be displayed.
+enum ToastPosition {
+  /// Positions the toast at the top of the screen.
+  top,
+
+  /// Positions the toast at the center of the screen.
+  center,
+
+  /// Positions the toast at the bottom of the screen.
+  bottom
+}
+
+/// Represents the animation type to be used when displaying the toast.
+enum ToastAnimation {
+  /// No animation.
+  none,
+
+  /// Slides the toast into view.
+  slide,
+
+  /// Fades the toast into view.
+  fade,
+
+  /// Scales the toast from a smaller size to its final size.
+  scale,
+
+  /// Bounces the toast into view.
+  bounce,
+
+  /// Rotates the toast into view.
+  rotate,
+
+  /// Zooms the toast from a smaller size to its final size.
+  zoom,
+
+  /// Wobbles the toast from side to side as it appears.
+  wobble
+}
+
+/// A utility class to display customizable toast notifications in a Flutter app.
+///
+/// The `TfkToast` class provides a static method `showToast` that allows you
+/// to display toast messages with various customization options, including type,
+/// position, animation, duration, and more.
 class TfkToast {
+  /// Displays a custom toast notification.
+  ///
+  /// The toast message will be shown with the specified parameters, allowing
+  /// for a high degree of customization.
+  ///
+  /// * [context] : The `BuildContext` in which to show the toast.
+  /// * [message] : The main message of the toast.
+  /// * [type] : The type of toast, determining the color and style.
+  /// * [position] : The position on the screen where the toast will appear.
+  /// * [duration] : The duration for which the toast will be visible.
+  /// * [title] : An optional title for the toast, displayed above the message.
+  /// * [showCloseIcon] : Whether to show a close icon on the toast.
+  /// * [animation] : The animation used when showing and hiding the toast.
+  /// * [messageStyle] : Custom text style for the message.
+  /// * [titleStyle] : Custom text style for the title.
+  /// * [padding] : Padding around the toast content.
+  /// * [borderRadius] : The border radius of the toast container.
+  /// * [elevation] : The elevation (shadow) of the toast container.
+  /// * [icon] : An optional icon to display alongside the message.
+  /// * [onTap] : A callback that triggers when the toast is tapped.
   static showToast(
     BuildContext context,
     String message, {
@@ -55,6 +130,12 @@ class TfkToast {
     Overlay.of(context).insert(overlayEntry);
   }
 
+  /// Returns the vertical position of the toast based on the [position] enum.
+  ///
+  /// * [context]: The `BuildContext` of the widget.
+  /// * [position]: The desired position of the toast on the screen.
+  ///
+  /// Returns a `double` indicating the top position for the `Positioned` widget.
   static double _getPosition(BuildContext context, ToastPosition position) {
     switch (position) {
       case ToastPosition.top:
@@ -69,6 +150,10 @@ class TfkToast {
   }
 }
 
+/// A private widget class that handles the toast's animation and appearance.
+///
+/// This widget is responsible for building the animated toast content
+/// and managing its lifecycle.
 class _AnimatedToastWidget extends StatefulWidget {
   final String message;
   final ToastType type;
@@ -116,7 +201,6 @@ class _AnimatedToastWidgetState extends State<_AnimatedToastWidget>
   late Animation<double> _bounceAnimation;
   late Animation<double> _rotateAnimation;
   late Animation<double> _zoomAnimation;
-  late Animation<double> _flipAnimation;
   late Animation<double> _wobbleAnimation;
 
   @override
@@ -188,7 +272,7 @@ class _AnimatedToastWidgetState extends State<_AnimatedToastWidget>
 
     _controller.forward();
 
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(widget.duration, () {
       _controller.reverse().then((_) {
         widget.onRemove();
       });
@@ -279,7 +363,6 @@ class _AnimatedToastWidgetState extends State<_AnimatedToastWidget>
         return RotationTransition(turns: _rotateAnimation, child: toastContent);
       case ToastAnimation.zoom:
         return ScaleTransition(scale: _zoomAnimation, child: toastContent);
-
       case ToastAnimation.wobble:
         return AnimatedBuilder(
           animation: _wobbleAnimation,
@@ -298,6 +381,11 @@ class _AnimatedToastWidgetState extends State<_AnimatedToastWidget>
     }
   }
 
+  /// Returns the background color for the toast based on the [type] enum.
+  ///
+  /// * [type] : The type of toast, which determines its background color.
+  ///
+  /// Returns a `Color` that represents the background color of the toast.
   Color _getBackgroundColor() {
     switch (widget.type) {
       case ToastType.info:

@@ -30,16 +30,14 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
-                          "This is an toast title message!",
-                          title: "Toast Title",
-                          type: ToastType.warning,
-                          position: ToastPosition.top,
-                          icon: const Icon(
-                            Icons.info,
-                            color: Colors.white,
-                          ),
-                        );
+                            context, "This is an toast title message!",
+                            title: "Toast Title",
+                            position: ToastPosition.top,
+                            icon: const Icon(
+                              Icons.info,
+                              color: Colors.white,
+                            ),
+                            backgroundColor: Colors.pinkAccent);
                       },
                       child: const Text("Top Toast"),
                     ),

@@ -1,4 +1,3 @@
-
 # TfkToast
 
 [![pub package](https://img.shields.io/pub/v/tfk_toast.svg)](https://pub.dev/packages/seamless_data_sync)
@@ -6,9 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/tfkcodes/tfk_toast)](https://github.com/tfkcodes/tfk_toast/stargazers)
 [![GitHub license](https://img.shields.io/github/license/tfkcodes/tfk_toast)](https://github.com/tfkcodes/tfk_toast/blob/main/LICENSE)
 
-
 **TfkToast** is a Flutter package designed to display beautiful and customizable toast notifications. Toast messages provide non-intrusive feedback to users, enhancing their experience.
-
 
 ## Features
 
@@ -23,7 +20,7 @@ Add `tfk_toast` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  tfk_toast: ^0.0.18
+  tfk_toast: ^0.0.19
 ```
 
 Then run:

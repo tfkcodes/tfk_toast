@@ -86,8 +86,9 @@ class TfkToast {
   /// * [onTap] : A callback that triggers when the toast is tapped.
   ///   /// * [backgroundColor] : The background color of the toast. Defaults to the color based on the [type].
 
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
   static showToast(
-    BuildContext context,
     String message, {
     ToastType type = ToastType.info,
     ToastPosition position = ToastPosition.top,
@@ -133,7 +134,8 @@ class TfkToast {
       ),
     );
 
-    Overlay.of(context).insert(overlayEntry);
+    // Overlay.of(context).insert(overlayEntry);
+    navigatorKey.currentState!.overlay!.insert(overlayEntry);
   }
 
   /// Returns the vertical position of the toast based on the [position] enum.
@@ -155,5 +157,3 @@ class TfkToast {
     }
   }
 }
-
-

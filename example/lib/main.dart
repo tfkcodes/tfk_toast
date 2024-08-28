@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      /***********  INITIALIZE THE TOAST KEY HERE */
+      navigatorKey: TfkToast.navigatorKey, //
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Custom Toast Example'),
@@ -29,8 +31,7 @@ class MyApp extends StatelessWidget {
                     /*********  TOP TOAST EXAMPLE *******/
                     ElevatedButton(
                       onPressed: () {
-                        TfkToast.showToast(
-                            context, "This is an toast title message!",
+                        TfkToast.showToast("This is an toast title message!",
                             title: "Toast Title",
                             position: ToastPosition.top,
                             icon: const Icon(
@@ -45,7 +46,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.info,
@@ -62,7 +62,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.info,
@@ -93,7 +92,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
@@ -111,7 +109,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
@@ -129,7 +126,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
@@ -148,7 +144,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
@@ -166,7 +161,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
@@ -184,7 +178,6 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          context,
                           "This is an toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,

@@ -22,7 +22,7 @@ Add `tfk_toast` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  tfk_toast: ^0.2.0
+  tfk_toast: ^0.2.1
 ```
 
 Then run:

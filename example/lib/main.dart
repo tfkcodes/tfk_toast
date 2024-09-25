@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tfk_toast_example/src/tfk_toast.dart';
+import 'package:tfk_toast/enum.dart';
+import 'package:tfk_toast/tfk_toast.dart';
 
 void main() {
   runApp(const MyApp());

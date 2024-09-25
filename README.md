@@ -20,7 +20,7 @@ Add `tfk_toast` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  tfk_toast: ^0.0.19
+  tfk_toast: ^0.2.0
 ```
 
 Then run:
@@ -40,9 +40,13 @@ import 'package:tfk_toast/tfk_toast.dart';
 To show a toast, use the following code:
 
 ```dart
-TfkToast.showToast(
-  context,
-  'This is a toast message!',
-  ToastType.success,
+TfkToast.showToast("This is an toast title message!",
+      title: "Toast Title",
+      position: ToastPosition.top,
+      icon: const Icon(
+      Icons.info,
+      color: Colors.white,
+      ),
+      backgroundColor: Colors.pinkAccent
 );
 ```

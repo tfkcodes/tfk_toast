@@ -14,12 +14,7 @@
 - **Automatic Dismissal**: Toasts automatically disappear after a few seconds.
 - **Manual Dismissal**: Optionally, allow users to manually close the toast.
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demos.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demos.mp4)
-Your browser does not support the video tag.
+![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
 
 ## Installation
 

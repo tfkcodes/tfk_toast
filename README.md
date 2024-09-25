@@ -18,7 +18,7 @@
   <source src="example/assets/demos/demo.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-![Video Preview](example/assets/demos/demo.mov)
+![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demos.mp4)
 Your browser does not support the video tag.
 
 ## Installation

@@ -14,6 +14,10 @@
 - **Automatic Dismissal**: Toasts automatically disappear after a few seconds.
 - **Manual Dismissal**: Optionally, allow users to manually close the toast.
 
+<video width="320" height="240" controls>
+  <source src="example/assets/demos/demo.mov" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 ## Installation
 
 Add `tfk_toast` to your `pubspec.yaml` file:

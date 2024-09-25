@@ -15,7 +15,7 @@
 - **Manual Dismissal**: Optionally, allow users to manually close the toast.
 
 ![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
-
+[![GitHub license](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
 ## Installation
 
 Add `tfk_toast` to your `pubspec.yaml` file:

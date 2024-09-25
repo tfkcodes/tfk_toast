@@ -11,8 +11,9 @@
 
 ## Example and Demos
 
-![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
-
+<p align="center">
+  <img src="https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif" width="400" height="300" />
+</p>
 ## Installation
 
 Add `tfk_toast` to your `pubspec.yaml` file:

@@ -18,6 +18,7 @@
   <source src="example/assets/demos/demo.mov" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
 ## Installation
 
 Add `tfk_toast` to your `pubspec.yaml` file:

@@ -14,7 +14,7 @@
 - **Automatic Dismissal**: Toasts automatically disappear after a few seconds.
 - **Manual Dismissal**: Optionally, allow users to manually close the toast.
 
-![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
+![Video Preview](example/assets/demos/demo1.gif)
 
 ## Installation
 

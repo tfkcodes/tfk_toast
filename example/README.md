@@ -11,10 +11,7 @@
 
 ## Example and Demos
 
-<video width="320" height="240" controls>
-  <source src="assets/demos/demo.mov" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+![Video Preview](https://github.com/tfkcodes/tfk_toast/tree/main/example/assets/demos/demo1.gif)
 
 ## Installation
 

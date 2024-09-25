@@ -1,6 +1,6 @@
 name: tfk_toast
 description: "tfk_toast is a lightweight Flutter package for displaying customizable toast messages."
-version: 0.2.0
+version: 0.2.1
 homepage: https://github.com/tfkcodes/tfk_toast
 
 environment:

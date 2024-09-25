@@ -41,6 +41,29 @@ import 'package:tfk_toast/tfk_toast.dart';
 
 To show a toast, use the following code:
 
+### INITILIALIZE THE PACKAGE TO REMOVE passing context direct the package
+
+```dart
+  class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+  return MaterialApp(
+  /****\*\*\***** INITIALIZE THE TOAST KEY HERE \*/
+  navigatorKey: TfkToast.navigatorKey, //
+  home: Scaffold(
+  appBar: AppBar(
+  title: const Text('Custom Toast Example'),
+  backgroundColor: Colors.blue,
+       ),
+     ),
+   );
+ }
+} 
+
+```
+
 ```dart
 TfkToast.showToast("This is an toast title message!",
       title: "Toast Title",

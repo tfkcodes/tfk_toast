@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tfk_toast/animation_widget.dart';
 
-import 'enum.dart';
+import 'package:tfk_toast/enum.dart';
 
 class TfkToast {
   /// Displays a custom toast notification.

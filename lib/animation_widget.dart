@@ -23,8 +23,8 @@ class AnimatedToastWidget extends StatefulWidget {
   final Color? backgroundColor;
 
   final VoidCallback? onTap;
-  final double? progress; // NEW: Progress value for linear progress bar
-  final bool isCircularProgress;
+  final double? progress;
+  final bool isProgress;
 
   const AnimatedToastWidget({
     super.key,
@@ -44,7 +44,7 @@ class AnimatedToastWidget extends StatefulWidget {
     this.onTap,
     this.backgroundColor,
     this.progress,
-    this.isCircularProgress = false,
+    this.isProgress = false,
   });
 
   @override
@@ -191,16 +191,25 @@ class AnimatedToastWidgetState extends State<AnimatedToastWidget>
                           fontSize: 14.0,
                         ),
                   ),
-                  if (widget.progress != null && !widget.isCircularProgress)
-                    LinearProgressIndicator(
-                      value: widget.progress,
-                      backgroundColor: Colors.grey[300],
-                      color: _getBackgroundColor(),
-                    ),
-                  if (widget.isCircularProgress)
-                    CircularProgressIndicator(
-                      value: widget.progress,
-                      color: _getBackgroundColor(),
+                  // Check if it's a progress toast
+                  if (widget.isProgress) 
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 8.0), // Add padding for the progress bar
+                      child: SizedBox(
+                        width: double.infinity, // Full width of the toast
+                        child: AnimatedBuilder(
+                          animation: _controller,
+                          builder: (context, child) {
+                            return LinearProgressIndicator(
+                              value: _controller.value, // Animate the progress
+                              backgroundColor: Colors.grey[300],
+                              color:
+                                  _getBackgroundColor(), // Use the toast's color
+                            );
+                          },
+                        ),
+                      ),
                     ),
                 ],
               ),

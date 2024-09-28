@@ -53,7 +53,7 @@ class TfkToast {
     Color? backgroundColor,
     VoidCallback? onTap,
     double? progress,
-    bool isCircularProgress = false,
+    bool showIndicator = false,
   }) {
     _toastQueue.add(ToastEntry(
       message: message,
@@ -72,7 +72,7 @@ class TfkToast {
       backgroundColor: backgroundColor,
       onTap: onTap,
       progress: progress,
-      isCircularProgress: isCircularProgress,
+      showIndicator: showIndicator,
     ));
 
     // If no toast is active, show the next toast
@@ -116,7 +116,7 @@ class TfkToast {
               backgroundColor: toast.backgroundColor,
               onTap: toast.onTap,
               progress: toast.progress,
-              isCircularProgress: toast.isCircularProgress,
+              isProgress: toast.showIndicator,
             ),
           ),
         ),

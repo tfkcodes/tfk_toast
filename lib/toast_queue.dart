@@ -19,7 +19,7 @@ class ToastEntry {
   final Color? backgroundColor;
   final VoidCallback? onTap;
   final double? progress;
-  final bool isCircularProgress;
+  final bool showIndicator;
 
   ToastEntry({
     required this.message,
@@ -38,6 +38,6 @@ class ToastEntry {
     this.backgroundColor,
     this.onTap,
     this.progress,
-    this.isCircularProgress = false,
+    this.showIndicator = false,
   });
 }

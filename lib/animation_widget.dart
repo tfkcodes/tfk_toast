@@ -23,6 +23,8 @@ class AnimatedToastWidget extends StatefulWidget {
   final Color? backgroundColor;
 
   final VoidCallback? onTap;
+  final double? progress; // NEW: Progress value for linear progress bar
+  final bool isCircularProgress;
 
   const AnimatedToastWidget({
     super.key,
@@ -41,6 +43,8 @@ class AnimatedToastWidget extends StatefulWidget {
     this.icon,
     this.onTap,
     this.backgroundColor,
+    this.progress,
+    this.isCircularProgress = false,
   });
 
   @override
@@ -187,6 +191,17 @@ class AnimatedToastWidgetState extends State<AnimatedToastWidget>
                           fontSize: 14.0,
                         ),
                   ),
+                  if (widget.progress != null && !widget.isCircularProgress)
+                    LinearProgressIndicator(
+                      value: widget.progress,
+                      backgroundColor: Colors.grey[300],
+                      color: _getBackgroundColor(),
+                    ),
+                  if (widget.isCircularProgress)
+                    CircularProgressIndicator(
+                      value: widget.progress,
+                      color: _getBackgroundColor(),
+                    ),
                 ],
               ),
             ),

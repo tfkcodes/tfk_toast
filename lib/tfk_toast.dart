@@ -1,7 +1,10 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:tfk_toast/animation_widget.dart';
 
 import 'package:tfk_toast/enum.dart';
+import 'package:tfk_toast/toast_queue.dart';
 
 class TfkToast {
   /// Displays a custom toast notification.
@@ -27,6 +30,11 @@ class TfkToast {
   ///   /// * [backgroundColor] : The background color of the toast. Defaults to the color based on the [type].
 
   static final navigatorKey = GlobalKey<NavigatorState>();
+  // Toast queue
+  static final Queue<ToastEntry> _toastQueue = Queue<ToastEntry>();
+
+// Flag to track if a toast is currently active
+  static bool _isToastActive = false;
 
   static showToast(
     String message, {
@@ -44,38 +52,87 @@ class TfkToast {
     Widget? icon,
     Color? backgroundColor,
     VoidCallback? onTap,
+    double? progress,
+    bool isCircularProgress = false,
   }) {
-    OverlayEntry? overlayEntry;
-    overlayEntry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: _getPosition(context, position),
-        left: MediaQuery.of(context).size.width * 0.1,
-        right: MediaQuery.of(context).size.width * 0.1,
-        child: Material(
-          color: Colors.transparent,
-          child: AnimatedToastWidget(
-            message: message,
-            type: type,
-            duration: duration,
-            title: title,
-            showCloseIcon: showCloseIcon,
-            animation: animation,
-            onRemove: () => overlayEntry!.remove(),
-            messageStyle: messageStyle,
-            titleStyle: titleStyle,
-            padding: padding,
-            borderRadius: borderRadius,
-            elevation: elevation,
-            icon: icon,
-            backgroundColor: backgroundColor,
-            onTap: onTap,
+    _toastQueue.add(ToastEntry(
+      message: message,
+      type: type,
+      position: position,
+      duration: duration,
+      title: title,
+      showCloseIcon: showCloseIcon,
+      animation: animation,
+      messageStyle: messageStyle,
+      titleStyle: titleStyle,
+      padding: padding,
+      borderRadius: borderRadius,
+      elevation: elevation,
+      icon: icon,
+      backgroundColor: backgroundColor,
+      onTap: onTap,
+      progress: progress,
+      isCircularProgress: isCircularProgress,
+    ));
+
+    // If no toast is active, show the next toast
+    if (!_isToastActive) {
+      _showNextToast();
+    }
+  }
+
+  // Show the next toast in the queue
+  static void _showNextToast() {
+    if (_toastQueue.isNotEmpty) {
+      final toast = _toastQueue.removeFirst();
+      _isToastActive = true;
+
+      late OverlayEntry overlayEntry;
+      overlayEntry = OverlayEntry(
+        builder: (context) => Positioned(
+          top: _getPosition(context, toast.position),
+          left: MediaQuery.of(context).size.width * 0.1,
+          right: MediaQuery.of(context).size.width * 0.1,
+          child: Material(
+            color: Colors.transparent,
+            child: AnimatedToastWidget(
+              message: toast.message,
+              type: toast.type,
+              duration: toast.duration,
+              title: toast.title,
+              showCloseIcon: toast.showCloseIcon,
+              animation: toast.animation,
+              onRemove: () {
+                overlayEntry.remove();
+                _isToastActive = false;
+                _showNextToast();
+              },
+              messageStyle: toast.messageStyle,
+              titleStyle: toast.titleStyle,
+              padding: toast.padding,
+              borderRadius: toast.borderRadius,
+              elevation: toast.elevation,
+              icon: toast.icon,
+              backgroundColor: toast.backgroundColor,
+              onTap: toast.onTap,
+              progress: toast.progress,
+              isCircularProgress: toast.isCircularProgress,
+            ),
           ),
         ),
-      ),
-    );
+      );
 
-    // Overlay.of(context).insert(overlayEntry);
-    navigatorKey.currentState!.overlay!.insert(overlayEntry);
+      navigatorKey.currentState!.overlay!.insert(overlayEntry);
+
+      // Remove the toast after the duration
+      Future.delayed(toast.duration, () {
+        if (_isToastActive) {
+          overlayEntry.remove();
+          _isToastActive = false;
+          _showNextToast(); // Show the next toast
+        }
+      });
+    }
   }
 
   /// Returns the vertical position of the toast based on the [position] enum.

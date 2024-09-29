@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           position: ToastPosition.top,
                           icon: const Icon(
@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.info,
                           position: ToastPosition.bottom,
@@ -66,7 +66,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.info,
                           position: ToastPosition.center,
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,
@@ -113,7 +113,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,
@@ -130,7 +130,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,
@@ -148,7 +148,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,
@@ -165,7 +165,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,
@@ -182,7 +182,7 @@ class MyApp extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         TfkToast.showToast(
-                          "This is an toast title message!",
+                          "This is  toast title message!",
                           title: "Toast Title",
                           type: ToastType.warning,
                           position: ToastPosition.top,

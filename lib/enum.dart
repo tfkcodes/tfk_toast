@@ -1,4 +1,3 @@
-
 /// Represents the different types of toast notifications.
 ///
 /// Each type typically corresponds to a specific color or style.
@@ -13,7 +12,7 @@ enum ToastType {
   error,
 
   /// A success toast, typically with a green background.
-  success
+  success,
 }
 
 /// Defines the position on the screen where the toast will be displayed.
@@ -25,7 +24,7 @@ enum ToastPosition {
   center,
 
   /// Positions the toast at the bottom of the screen.
-  bottom
+  bottom,
 }
 
 /// Represents the animation type to be used when displaying the toast.
@@ -52,11 +51,5 @@ enum ToastAnimation {
   zoom,
 
   /// Wobbles the toast from side to side as it appears.
-  wobble
+  wobble,
 }
-
-/// A utility class to display customizable toast notifications in a Flutter app.
-///
-/// The `TfkToast` class provides a static method `showToast` that allows you
-/// to display toast messages with various customization options, including type,
-/// position, animation, duration, and more.

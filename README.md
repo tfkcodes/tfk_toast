@@ -22,7 +22,7 @@ Add `tfk_toast` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  tfk_toast: ^0.2.1
+  tfk_toast: ^0.2.2
 ```
 
 Then run:
@@ -60,7 +60,7 @@ To show a toast, use the following code:
      ),
    );
  }
-} 
+}
 
 ```
 
